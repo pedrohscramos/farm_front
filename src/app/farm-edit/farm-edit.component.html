@@ -1,0 +1,32 @@
+<div class="container">
+    <legend>Edit Farm</legend>
+    <form>
+      <div class="mb-3">
+        <label for="cmbOwner" class="form-label">Proprietário</label>
+        <select class="form-select" name="owner_id" [(ngModel)] ="farmForm.owner_id" >
+            <option *ngFor="let owner of owners" value="{{owner.id}}">{{owner.name}}</option>
+        </select>
+        
+      </div>
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Name</label>
+        <input type="text" name="name" [(ngModel)] = "farmForm.name" class="form-control" id="txtName" />
+      </div>
+      
+      <div class="mb-3">
+        <label for="txtArea" class="form-label">Area</label>
+        <input type="number" name="area" [(ngModel)] = "farmForm.area" class="form-control" id="txtArea" />
+      </div>
+
+      <div class="mb-3">
+        <label for="txtCentroid" class="form-label">Centroid</label>
+        <input type="text" name="centroid" [(ngModel)] = "farmForm.centroid" class="form-control" id="txtCentroid" />
+      </div>
+
+      <div class="mb-3">
+        <label for="txtGeometry" class="form-label">Geometry</label>
+        <input type="text" name="geometry" [(ngModel)] = "farmForm.geometry" class="form-control" id="txtGeometry" />
+      </div>
+      <button type="button" (click)="update()" class="btn btn-primary">Update</button>
+    </form>
+  </div>

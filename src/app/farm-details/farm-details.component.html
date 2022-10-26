@@ -1,0 +1,15 @@
+<a class="btn btn-sm btn-primary" [routerLink]="['/farm']"><< Voltar</a>
+<div class="container">
+<h3>Detalhes da fazenda</h3>
+
+<div *ngIf="farm">
+  <p><b>Name:</b><br> {{ farm.name }}</p>
+  <p><b>Área:</b><br> {{ farm.area }}</p>
+  <p><b>Centroid:</b><br> <small>{{ farm.centroid }}</small></p>
+  <p><b>Owner:</b><br> {{nomeDono}}</p>
+  <p><b>Creation Date:</b><br> {{farm.creation_date | date:'dd/MM/yyyy'}}</p>
+  <a class="btn btn-primary" [routerLink]="['/edit', farm.id]">Editar</a>
+  <button type="button" (click)="delete(farm.id)" class="btn btn-danger">Delete</button>
+</div>
+
+</div>

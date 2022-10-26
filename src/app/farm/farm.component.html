@@ -1,0 +1,11 @@
+<p routerLink="">Voltar</p>
+<a class="btn btn-primary" [routerLink]="['/create']">Novo cadastro
+</a>
+<ul *ngFor="let farm of farms">
+  
+    <li><a [routerLink]="['/details', farm.id]">{{ farm.name }}</a></li>
+  
+  
+    
+</ul>
+<p (click)="draw('Circle')" style="cursor: pointer;">Desenhar círculo</p>
